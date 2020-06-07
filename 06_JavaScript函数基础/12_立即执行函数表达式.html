@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.JavaScript中不允许直接在一个函数的声明后面跟()执行这个函数
+    // 1.1 下面的代码不能立即执行
+    // function test() {
+    //   console.log("test函数被调用");
+    // }()
+
+    // 1.2 改进一: 对函数加上()
+    // 特点: 执行完后会立即销毁,那么test名称就没有意义,test就可以省略
+    (function () {
+      console.log("test函数被调用");
+    })()
+
+    // 2.匿名函数表达式
+    var demo = function () {
+      console.log("demo函数被调用");
+    }() //函数表达式后面加括号，当javascript引擎解析到此处时能立即调用函数
+    console.log(demo);
+  </script>
+</body>
+
+</html>

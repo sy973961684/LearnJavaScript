@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.需求一,打印1~10数字中5和8不打印
+    for (var i = 1; i <= 10; i++) {
+      if (i === 5 || i === 8) {
+        continue
+      }
+      console.log(i)
+    }
+
+    // 2.需求二:遇到5直接跳出循环
+    for (var i = 1; i <= 10; i++) {
+      if (i === 5) {
+        break
+      }
+      console.log(i)
+    }
+  </script>
+</body>
+
+</html>

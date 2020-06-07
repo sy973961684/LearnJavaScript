@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.打印10次 hello world
+    // var i = 0;
+    // while (i < 10) {
+    //   console.log("hello world");
+    //   i++;
+    // }
+
+    // 2.打印0~100之间的数字
+    // var i = 1;
+    // while (i < 100) {
+    //   console.log(i);
+    //   i++
+    // }
+
+    // 3.计算0~99数字的和
+    // var i = 0;
+    // var total = 0;
+    // while (i < 100) {
+    //   total += i;
+    //   i++;
+    // }
+    // console.log(total);
+
+    // 4.用户输入一个数字,打印出这个数是奇数还是偶数
+    // var num = prompt("请输入一个数字:");
+    // if (num % 2 === 0) {
+    //   console.log("你输入的是一个偶数");
+    // }
+
+    // 5.打印1~100之间所有奇数和偶数的和
+    var i = 0;
+    var j = 0;
+    var o = 0;
+    while (i < 100) {
+      if (i % 2 === 0) {
+        o += i;
+      } else {
+        j += i;
+      }
+      i++;
+    }
+    console.log("所有奇数的和是:", j);
+    console.log("所有偶数的和是:", o);
+  </script>
+</body>
+
+</html>

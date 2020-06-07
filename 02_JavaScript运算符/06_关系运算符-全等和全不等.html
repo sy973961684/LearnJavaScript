@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.==比较: 会进行隐式转换,再进行比较
+    var num1 = 123;
+    var num2 = "123";
+    // == 判断,隐式判断: 将string转成number
+    // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness
+    console.log(num1 == num2); // true
+    console.log(num1 === num2); // false
+
+    var flag1 = true;
+    var flag2 = "true";
+    // 隐式转换: 都转成number再比较
+    // flag1 -> 1
+    // flag2 -> NaN
+    console.log(flag1 == flag2); // false
+
+    // 2.===全等: 类型相等,数据相等(更多)
+    console.log(num1 === num2); // false
+
+    // 3.!= 比较: 隐式转换
+    // 3.!==比较: 不会进行隐式转换
+    console.log(num1 != num2); // false
+    console.log(num1 !== num2); // true
+  </script>
+</body>
+
+</html>

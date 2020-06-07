@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.定义数组
+    var nums = [10, 64, 60, 20, 35];
+
+    // 2.求数组中数字的和以及平均值
+    // var sum = 0;
+    // var average = 0;
+    // for (var i = 0; i < nums.length; i++) {
+    //   sum += nums[i];
+    // }
+    // average = sum / nums.length;
+    // console.log("sum:", sum);
+    // console.log("average:", average);
+
+    // 3.找出数组中的最大值
+    // var max = 0;
+    // for (var i = 0; i < nums.length; i++) {
+    //   if (nums[i] > max) {
+    //     max = nums[i];
+    //   }
+    // }
+    // console.log(max);
+
+    // 4.反转数组
+    for (var i = 0; i < nums.length / 2; i++) {
+      var temp = nums[i]
+      nums[i] = nums[nums.length - 1 - i];
+      nums[nums.length - 1 - i] = temp;
+    }
+    console.log(nums);
+  </script>
+</body>
+
+</html>

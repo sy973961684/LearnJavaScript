@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.如何定义一个函数
+    /*
+      命名规则:
+        第一个字符必须是字母或_或$
+        其他字符串字母或者_或数字$
+     */
+    // function 函数名(){
+
+    // }
+
+    function printInfo() {
+      console.log("why");
+      console.log(18);
+    }
+
+    function printInfo() {
+      console.log("sy");
+      console.log(19);
+    }
+
+    // 2.对上面的代码进行重构
+    function printInfo(name, age) {
+      console.log(name);
+      console.log(age);
+    }
+    printInfo("lisi", 22);
+
+    // 3.练习二: 定义两个数字相加
+    function sum(num1, num2) {
+      console.log(num1 + num2);
+    }
+    sum(10, 30);
+
+    // 4.练习三: 对某个人say Hello
+    function sayHello(name) {
+      console.log("Hello " + name);
+    }
+    sayHello("lisi");
+  </script>
+</body>
+
+</html>
