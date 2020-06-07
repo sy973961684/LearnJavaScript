@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // null NaN undefined 数据类型不一样
+    console.log(typeof null); //object
+    console.log(typeof NaN); //number
+    console.log(typeof undefined); //undefined
+
+    // null undefined 可以等同
+    // ==(等同运算符)
+    // ===(全等运算符,既判断值是否相等也判断数据类型是否相等)
+    console.log(null == NaN); // false
+    console.log(null == undefined); // true
+    console.log(undefined == NaN); // false
+  </script>
+</body>
+
+</html>

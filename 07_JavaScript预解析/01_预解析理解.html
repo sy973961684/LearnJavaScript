@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 问题1
+    // console.log(num); // Uncaught ReferenceError: num is not defined
+
+    // 问题2
+    console.log(num); // undefined
+    var num = 1;
+    // 预解析分析: 变量提升,相当于执行了以下代码
+    // var num;
+    // console.log(num);
+    // num = 1;
+
+
+    // 问题3
+    fn(); // 正常
+
+    function fn() {
+      console.log(11);
+    }
+    // 预解析分析: 函数提升,相当于执行了以下代码
+    // function fn() {
+    //   console.log(11);
+    // }
+    // fn();
+
+
+
+    fun(); // Uncaught TypeError: fun is not a function
+    var fun = function () {
+      console.log(22);
+    }
+    // 预解析分析: 变量提升,相当于执行了以下代码
+    // var fun;
+    // fun();
+    // fun = function () {
+    //   console.log(22);
+    // }
+
+    // 1. js引擎运行js分为两步: 预解析,代码执行
+    // 1.1. 预解析: js引擎会把js里面所有的var还有function提升到当前作用域的最前面
+    // 1.2. 代码执行: 按照代码书写的顺序从上往下执行
+
+    // 2. 预解析分为: 变量预解析(变量提升) 和 函数预解析(函数提升)
+    // 2.1 变量提升: 就是把所有的变量声明提升到当前的作用域最前面,不提升赋值操作
+    // 2.2 函数提升: 就是把所有的函数声明提升到当前作用域的最前面,不调用函数
+  </script>
+</body>
+
+</html>

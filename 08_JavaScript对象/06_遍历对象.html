@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 遍历对象
+    var obj = {
+      name: "sy",
+      age: 14,
+      sex: "男",
+      fn: function () {
+        console.log();
+      }
+    }
+    // for ...in 语句用于对数组或者对象的属性进行遍历操作
+    // for (变量 in 对象){}
+    for (var k in obj) {
+      console.log(k); // 输出的是属性名
+      console.log(obj[k]); // obj[k] 输出的是属性值
+    }
+
+    /*
+      小结:
+        1. 对象可以让代码结构更清晰
+        2. 对象是复杂数据类型object
+        3. 本质: 对象就是一组无序的相关属性和方法的集合
+        4. 构造函数泛指某一大类,比如苹果,不管是红苹果还是绿苹果,都称为苹果
+        5. 对象实例特指一个事物,比如这个苹果
+        6. for ...in语句用于对对象的属性进行遍历
+     */
+
+    /*
+      作业:
+        1. 创建一个电脑对象,该对象要有颜色 重量 品牌 型号, 可以看电影 听音乐 打游戏和敲代码
+        2. 创建一个按钮对象,该对象中需要包含宽 高 背景颜色和点击行为
+        3. 创建一个车的对象,该对象要有重量 颜色 品牌,可以载人,拉货和耕田
+        4. 写一个函数,实现反转任意数组
+        5. 写一个函数,实现对数字数组的排序
+        6. 小项目: 简易的计算器(可以+-/*和退出)
+     */
+  </script>
+</body>
+
+</html>
