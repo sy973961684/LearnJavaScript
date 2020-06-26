@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-widthdevice-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .message {
+      color: black;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    .right {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="password">
+  <i class="message">请输入6-16位密码</i>
+  <script>
+    var input = document.querySelector("input");
+    var i = document.querySelector("i");
+
+    input.onblur = function () {
+      if (this.value.length < 6 || this.value.length > 16) {
+        i.innerHTML = "您的输入有误";
+        i.className = "message wrong";
+      } else {
+        i.innerHTML = "您的输入正确";
+        i.className = "message right";
+      }
+    }
+  </script>
+</body>
+
+</html>

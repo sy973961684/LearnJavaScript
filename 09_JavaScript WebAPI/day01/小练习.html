@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 1.数组去重
+    var nums = [1, 2, 2, 3, 3, 7, 5, 1];
+    var newNums = [];
+    for (var i = 0; i < nums.length - 1; i++) {
+      if (newNums.indexOf(nums[i]) === -1) {
+        newNums.push(nums[i]);
+      }
+    }
+    console.log(newNums);
+
+    // 2.查找一个字符串("oooabsdfsfoo")中o出现的次数和位置
+    var str = "oooabsdfsfoo";
+    var count = 0;
+    for (var i = 0; i < str.length - 1; i++) {
+      // console.log(str.charAt(i));
+      if ("o" === str.charAt(i)) {
+        count++;
+        console.log("字符o出现的位置是:", i);
+      }
+    }
+    console.log("字符o出现的次数:", count);
+
+    // 3.查找一个数组中,某个单词出现的次数和位置
+    var words = ["go", "redis", "redis", "java", "go", "go", "redis"];
+    var obj = {};
+    for (var j = 0; j < words.length; j++) {
+      if (obj.hasOwnProperty(words[j])) {
+        obj[words[j]]++;
+      } else {
+        obj[words[j]] = 1;
+      }
+    }
+    console.log(obj);
+
+    // 4.统计一个字符串中字符出现次数最多的字符
+    var s = "abcabcadddd";
+    var obj1 = {};
+    for (var i = 0; i < s.length; i++) {
+      if (obj1.hasOwnProperty(s.charAt(i))) {
+        obj1[s.charAt(i)]++;
+      } else {
+        obj1[s.charAt(i)] = 1;
+      }
+    }
+    console.log(obj1);
+    var max = 0;
+    for (var k in obj1) {
+      if (obj1[k] > max) {
+        max = obj1[k];
+      }
+    }
+    console.log("max:", max);
+  </script>
+
+  <script>
+    var map = new Map();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>面向对象 Tab</title>
+  <link rel="stylesheet" href="./styles/tab.css">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <main>
+    <h4>
+      Js 面向对象 动态添加标签页
+    </h4>
+    <div class="tabsbox" id="tab">
+      <!-- tab 标签 -->
+      <nav class="firstnav">
+        <ul>
+          <li class="liactive"><span>测试1</span><span class="iconfont icon-guanbi"></span></li>
+          <li><span>测试2</span><span class="iconfont icon-guanbi"></span></li>
+          <li><span>测试3</span><span class="iconfont icon-guanbi"></span></li>
+        </ul>
+        <div class="tabadd">
+          <span>+</span>
+        </div>
+      </nav>
+
+      <!-- tab 内容 -->
+      <div class="tabscon">
+        <section class="conactive">测试1</section>
+        <section>测试2</section>
+        <section>测试3</section>
+      </div>
+    </div>
+  </main>
+  <script>
+    var tabscon = document.querySelector(".tabscon")
+    var ul = document.querySelector("#tab ul")
+    var lis = document.querySelector("#tab").querySelectorAll(".firstnav ul li")
+    var sections = document.querySelectorAll("section")
+    console.log(lis)
+    // 切换功能
+    // function togger() {
+    //   for (var i = 0; i < lis.length; i++) {
+    //     lis[i].index = i
+    //     sections[i].index = i
+    //     //清空所有的liactive类名
+    //     lis[i].addEventListener("click", function () {
+    //       console.log(this.index)
+    //       for (var i = 0; i < lis.length; i++) {
+    //         lis[i].className = ""
+    //       }
+    //       //点击哪个就把哪个的 liactive类去掉
+    //       lis[this.index].className = "liactive"
+
+    //       for (var i = 0; i < sections.length; i++) {
+    //         sections[i].className = ""
+    //       }
+    //       sections[this.index].className = "conactive"
+    //     })
+    //   }
+    // }
+    // togger()
+    // // 添加功能
+    // // 获取+号
+    // var tabadd = document.querySelector("#tab .tabadd span")
+    // tabadd.addEventListener("click", function () {
+    //   //添加 一个新的tab
+    //   random = Math.random(0, 1).toString()
+    //   var li = '<li class="liactive"><span>新选项卡</span><span class="iconfont icon-guanbi"></span></li>';
+    //   var section = '<section class="conactive">测试 ' + random + '</section>';
+    //   ul.insertAdjacentHTML("beforeend", li)
+    //   tabscon.insertAdjacentHTML("beforeend", section)
+
+    //   //重新出事胡绑定事件
+    //   togger()
+    // })
+  </script>
+  <script src="js/tabok.js"></script>
+</body>
+
+</html>

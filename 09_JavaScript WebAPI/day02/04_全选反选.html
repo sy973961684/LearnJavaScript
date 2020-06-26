@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" id="j_cbALL">
+          </th>
+          <th>商品</th>
+          <th>价钱</th>
+        </tr>
+      </thead>
+      <tbody id="j_tb">
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>ipone8</td>
+          <th>8000</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>ipone8</td>
+          <th>8000</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>ipone8</td>
+          <th>8000</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>ipone8</td>
+          <th>8000</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    // 获取元素
+    var all = document.getElementById("j_cbALL"); //全选按钮
+    var j_tbs = document.getElementById("j_tb").querySelectorAll("input");
+
+    all.onclick = function () {
+      // this.checked 当前复选框的选中状态如果是true,就是选中,如果为false,就是没有选中
+      for (var i = 0; i < j_tbs.length; i++) {
+        j_tbs[i].checked = this.checked;
+      }
+    }
+
+    for (var i = 0; i < j_tbs.length; i++) {
+      j_tbs[i].onclick = function () {
+        var flag = true;
+        for (var i = 0; i < j_tbs.length; i++) {
+          if (!j_tbs[i].checked) {
+            flag = false;
+            break;
+          }
+        }
+        all.checked = flag;
+      }
+    }
+  </script>
+</body>
+
+</html>
