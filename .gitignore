@@ -105,3 +105,5 @@ dist
 
 # NodeJS module
 **/node_modules/
+
+.DS_Store

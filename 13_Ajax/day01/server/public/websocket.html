@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+
+<body>
+  <h1>WebSocket Echo Test</h1>
+  <p>
+    Message: <input id="message" type="text">
+  </p>
+  <button id="btn">点我</button>
+
+  <div>
+    <p id="text">
+
+    </p>
+  </div>
+  <script>
+    var sock = null;
+    var wsuri = "ws://127.0.0.1:1234"
+    var msg = document.getElementById('message')
+    var btn = document.getElementById('btn')
+    var text = document.getElementById('text')
+
+    btn.onclick = function () {
+      console.log(msg.value)
+      sock.send(msg.value)
+    }
+
+    msg.onkeypress = function (e) {
+      if (e.keyCode == 13) {
+        sock.send(msg.value)
+      }
+    }
+
+    window.onload = function () {
+      console.log("onload")
+      sock = new WebSocket(wsuri)
+      sock.onload = function () {
+        console.log("Connected to " + wsuri)
+      }
+      sock.onclose = function (e) {
+        console.log("connection closed " + e.code)
+      }
+      sock.onmessage = function (e) {
+        text.innerHTML = e.data
+        console.log("message received: " + e.data)
+      }
+    }
+  </script>
+
+</body>
+
+</html>

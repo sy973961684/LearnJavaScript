@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="input">
+  <button id="btn"> 点我发送</button>
+  <ol id='ul'>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ol>
+
+  <script>
+    var input = document.getElementById('input')
+    var btn = document.getElementById('btn')
+    var ul = document.getElementById('ul')
+    btn.onclick = function () {
+      var li = document.createElement('li')
+      var inputValue = input.value
+      li.innerHTML = inputValue
+      ul.appendChild(li)
+    }
+  </script>
+</body>
+
+</html>
