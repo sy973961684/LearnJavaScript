@@ -16,7 +16,7 @@
     // 3. 发送请求
     xhr.send()
     // 4. 获取服务器响应到客户端的数据
-    xhr.onload = function () {
+    xhr.onload = function() {
       // console.log(typeof xhr.responseText) //string
       // 将JSON字符串转换成JSON对象
       var responseText = JSON.parse(xhr.responseText)

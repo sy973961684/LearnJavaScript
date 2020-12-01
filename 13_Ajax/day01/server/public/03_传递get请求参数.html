@@ -7,6 +7,8 @@
   <title>Document</title>
 </head>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <body>
   <p>
     <input type="text" id="username">
@@ -18,26 +20,27 @@
     <input type="button" value="提交" id="btn">
   </p>
 
+  <div id="aaa">
+
+  </div>
+
   <script>
     var btn = document.querySelector('#btn')
     var username = document.querySelector('#username')
     var age = document.querySelector('#age')
-    btn.onclick = function () {
-      // 创建ajax对象
-      var xhr = new XMLHttpRequest()
-
-      var nameValue = username.value
-      var ageValue = age.value
-      // 拼接请求参数
-      var params = 'username=' + nameValue + '&age=' + ageValue + ''
-      // 配置ajax对象
-      xhr.open('get', 'http://localhost:3000/get?' + params)
-      // 发送请求
-      xhr.send()
-      // 获取服务器响应的数据
-      xhr.onload = function () {
-        console.log(xhr.responseText)
-      }
+    var aaa = document.querySelector('#aaa')
+    btn.onclick = function() {
+      // 用户input输入框中输入的值
+      u = username.value
+      a = age.value
+      console.log(u, a);
+      axios.get('http://127.0.0.1:5000?name=' + u)
+        .then(function(response) {
+          console.log(response.data.student[0])
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   </script>
 </body>
